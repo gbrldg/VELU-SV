@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>¡San Valentin! 💝</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400 ;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600;700&display=swap');
         
         * {
             margin: 0;
@@ -14,14 +14,21 @@
             -webkit-tap-highlight-color: transparent;
         }
         
+        html {
+            font-size: 16px;
+        }
+        
         body {
             font-family: 'Quicksand', sans-serif;
             background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
             min-height: 100vh;
             min-height: 100dvh;
             overflow: hidden;
-            position: relative;
+            position: fixed;
+            width: 100%;
+            height: 100%;
             touch-action: manipulation;
+            -webkit-font-smoothing: antialiased;
         }
         
         .floating-hearts {
@@ -53,15 +60,19 @@
             left: 0;
             width: 100%;
             height: 100%;
+            height: 100dvh;
             display: none;
             justify-content: center;
-            align-items: center;
-            padding: 20px;
+            align-items: flex-start;
+            padding: 10px;
+            padding-top: 20px;
+            padding-bottom: 40px;
             z-index: 1;
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
+            box-sizing: border-box;
         }
         
         .screen.active {
@@ -76,17 +87,19 @@
         
         .content-box {
             background: white;
-            border-radius: 30px;
-            padding: 30px;
+            border-radius: 20px;
+            padding: 25px;
             max-width: 600px;
             width: 100%;
-            max-height: 90vh;
+            max-height: 85vh;
+            max-height: 85dvh;
             overflow-y: auto;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
             text-align: center;
             position: relative;
             animation: slideUp 0.6s ease-out;
             -webkit-overflow-scrolling: touch;
+            margin: auto;
         }
         
         @keyframes slideUp {
@@ -97,7 +110,7 @@
         h1 {
             font-family: 'Pacifico', cursive;
             color: #d63384;
-            font-size: 2em;
+            font-size: 1.8em;
             margin-bottom: 15px;
             line-height: 1.2;
         }
@@ -105,7 +118,7 @@
         h2 {
             font-family: 'Pacifico', cursive;
             color: #d63384;
-            font-size: 1.8em;
+            font-size: 1.6em;
             margin-bottom: 15px;
             line-height: 1.2;
         }
@@ -183,7 +196,7 @@
         }
         
         .kerito-text {
-            font-size: 1em;
+            font-size: 1.5em;
             font-weight: bold;
             color: #ffd700;
             margin: 20px 0;
@@ -485,34 +498,6 @@
             50% { transform: scaleY(1); }
         }
         
-        .nav-dots {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 8px;
-            z-index: 100;
-            background: rgba(255,255,255,0.8);
-            padding: 8px 15px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-        }
-        
-        .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: rgba(0,0,0,0.2);
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .dot.active {
-            background: #d63384;
-            transform: scale(1.3);
-        }
-        
         .progress-bar {
             position: fixed;
             top: 0;
@@ -523,44 +508,116 @@
             z-index: 100;
         }
         
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* ========== MEJORAS PARA MÓVIL ========== */
+        
         @media (max-width: 480px) {
-            h1 { font-size: 1.6em; }
-            h2 { font-size: 1.4em; }
-            .content-box { 
-                padding: 20px; 
-                border-radius: 20px;
-                margin: 10px;
+            .content-box {
+                padding: 20px;
+                margin: 5px;
+                border-radius: 15px;
             }
-            .photo-container { 
-                grid-template-columns: 1fr; 
-                gap: 8px;
+            
+            h1 {
+                font-size: 1.5em;
             }
-            .photo-slot {
+            
+            h2 {
+                font-size: 1.3em;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                font-size: 1em;
+                width: 90%;
+                margin: 5px auto;
+            }
+            
+            .big-heart {
+                font-size: 3em;
+            }
+            
+            .gift-box {
+                width: 120px;
                 height: 120px;
             }
-            .kerito-text { font-size: 1em; }
+            
+            .photo-container {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .photo-slot {
+                height: 150px;
+            }
+            
             .envelope-container {
                 width: 200px;
                 height: 140px;
             }
+            
             .envelope-front::before {
                 border-left: 100px solid transparent;
                 border-right: 100px solid transparent;
                 border-top: 70px solid #ff85a2;
             }
-            .btn {
-                padding: 12px 25px;
-                font-size: 1em;
+            
+            .kerito-text {
+                font-size: 1.2em;
+            }
+            
+            .love-messages {
+                max-height: 150px;
+            }
+            
+            .envelope-back {
+                font-size: 0.8em;
+                padding: 10px;
+                line-height: 1.4;
+            }
+            
+            .click-hint {
+                font-size: 0.7em;
+                padding: 5px 10px;
             }
         }
         
-        @media (max-height: 500px) and (orientation: landscape) {
+        @media (max-width: 380px) {
             .content-box {
-                max-height: 85vh;
                 padding: 15px;
             }
-            .big-heart { font-size: 3em; }
-            .gift-box { width: 100px; height: 100px; }
+            
+            h1 {
+                font-size: 1.4em;
+            }
+            
+            h2 {
+                font-size: 1.2em;
+            }
+            
+            .btn {
+                padding: 12px 20px;
+                font-size: 0.95em;
+            }
+            
+            .big-heart {
+                font-size: 2.5em;
+            }
+        }
+        
+        @media (max-height: 700px) {
+            .content-box {
+                max-height: 80vh;
+                padding: 20px;
+            }
+            
+            .photo-container {
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
@@ -577,8 +634,6 @@
     </div>
     
     <div class="floating-hearts" id="heartsContainer"></div>
-    
-    <div class="nav-dots" id="navDots"></div>
 
     <div class="screen start-screen active" id="screen1">
         <div class="content-box">
@@ -800,7 +855,6 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             createHearts();
-            createNavDots();
             updateProgress();
         });
 
@@ -821,23 +875,9 @@
             }, 1500);
         }
 
-        function createNavDots() {
-            const container = document.getElementById('navDots');
-            for (let i = 1; i <= totalScreens; i++) {
-                const dot = document.createElement('div');
-                dot.className = 'dot' + (i === 1 ? ' active' : '');
-                dot.onclick = () => goToScreen(i);
-                container.appendChild(dot);
-            }
-        }
-
         function updateProgress() {
             const progress = (currentScreen / totalScreens) * 100;
             document.getElementById('progressBar').style.width = progress + '%';
-            
-            document.querySelectorAll('.dot').forEach((dot, index) => {
-                dot.classList.toggle('active', index + 1 === currentScreen);
-            });
         }
 
         function startWithMusic() {
