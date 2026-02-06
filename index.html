@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>¡San Valentin! 💝</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400 ;600;700&display=swap');
         
         * {
             margin: 0;
@@ -14,21 +14,14 @@
             -webkit-tap-highlight-color: transparent;
         }
         
-        html {
-            font-size: 16px;
-        }
-        
         body {
             font-family: 'Quicksand', sans-serif;
             background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
             min-height: 100vh;
             min-height: 100dvh;
             overflow: hidden;
-            position: fixed;
-            width: 100%;
-            height: 100%;
+            position: relative;
             touch-action: manipulation;
-            -webkit-font-smoothing: antialiased;
         }
         
         .floating-hearts {
@@ -60,19 +53,15 @@
             left: 0;
             width: 100%;
             height: 100%;
-            height: 100dvh;
             display: none;
             justify-content: center;
-            align-items: flex-start;
-            padding: 10px;
-            padding-top: 20px;
-            padding-bottom: 40px;
+            align-items: center;
+            padding: 20px;
             z-index: 1;
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
-            box-sizing: border-box;
         }
         
         .screen.active {
@@ -87,19 +76,17 @@
         
         .content-box {
             background: white;
-            border-radius: 20px;
-            padding: 25px;
+            border-radius: 30px;
+            padding: 30px;
             max-width: 600px;
             width: 100%;
-            max-height: 85vh;
-            max-height: 85dvh;
+            max-height: 90vh;
             overflow-y: auto;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
             text-align: center;
             position: relative;
             animation: slideUp 0.6s ease-out;
             -webkit-overflow-scrolling: touch;
-            margin: auto;
         }
         
         @keyframes slideUp {
@@ -110,7 +97,7 @@
         h1 {
             font-family: 'Pacifico', cursive;
             color: #d63384;
-            font-size: 1.8em;
+            font-size: 2em;
             margin-bottom: 15px;
             line-height: 1.2;
         }
@@ -118,7 +105,7 @@
         h2 {
             font-family: 'Pacifico', cursive;
             color: #d63384;
-            font-size: 1.6em;
+            font-size: 1.8em;
             margin-bottom: 15px;
             line-height: 1.2;
         }
@@ -196,7 +183,7 @@
         }
         
         .kerito-text {
-            font-size: 1.5em;
+            font-size: 1em;
             font-weight: bold;
             color: #ffd700;
             margin: 20px 0;
@@ -287,7 +274,7 @@
             right: 0;
             background: rgba(255,255,255,0.95);
             padding: 8px;
-            font-size: 0.75em;
+            font-size: 0.3em;
             color: #88184f;
             transform: translateY(100%);
             transition: transform 0.3s;
@@ -498,6 +485,8 @@
             50% { transform: scaleY(1); }
         }
         
+
+        
         .progress-bar {
             position: fixed;
             top: 0;
@@ -508,116 +497,44 @@
             z-index: 100;
         }
         
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        
-        /* ========== MEJORAS PARA MÓVIL ========== */
-        
         @media (max-width: 480px) {
-            .content-box {
-                padding: 20px;
-                margin: 5px;
-                border-radius: 15px;
+            h1 { font-size: 1.6em; }
+            h2 { font-size: 1.4em; }
+            .content-box { 
+                padding: 20px; 
+                border-radius: 20px;
+                margin: 10px;
             }
-            
-            h1 {
-                font-size: 1.5em;
+            .photo-container { 
+                grid-template-columns: 1fr; 
+                gap: 8px;
             }
-            
-            h2 {
-                font-size: 1.3em;
-            }
-            
-            .btn {
-                padding: 12px 25px;
-                font-size: 1em;
-                width: 90%;
-                margin: 5px auto;
-            }
-            
-            .big-heart {
-                font-size: 3em;
-            }
-            
-            .gift-box {
-                width: 120px;
+            .photo-slot {
                 height: 120px;
             }
-            
-            .photo-container {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-            
-            .photo-slot {
-                height: 150px;
-            }
-            
+            .kerito-text { font-size: 1em; }
             .envelope-container {
                 width: 200px;
                 height: 140px;
             }
-            
             .envelope-front::before {
                 border-left: 100px solid transparent;
                 border-right: 100px solid transparent;
                 border-top: 70px solid #ff85a2;
             }
-            
-            .kerito-text {
-                font-size: 1.2em;
-            }
-            
-            .love-messages {
-                max-height: 150px;
-            }
-            
-            .envelope-back {
-                font-size: 0.8em;
-                padding: 10px;
-                line-height: 1.4;
-            }
-            
-            .click-hint {
-                font-size: 0.7em;
-                padding: 5px 10px;
+            .btn {
+                padding: 12px 25px;
+                font-size: 1em;
             }
         }
         
-        @media (max-width: 380px) {
+        @media (max-height: 500px) and (orientation: landscape) {
             .content-box {
+                max-height: 85vh;
                 padding: 15px;
             }
-            
-            h1 {
-                font-size: 1.4em;
-            }
-            
-            h2 {
-                font-size: 1.2em;
-            }
-            
-            .btn {
-                padding: 12px 20px;
-                font-size: 0.95em;
-            }
-            
-            .big-heart {
-                font-size: 2.5em;
-            }
-        }
-        
-        @media (max-height: 700px) {
-            .content-box {
-                max-height: 80vh;
-                padding: 20px;
-            }
-            
-            .photo-container {
-                margin: 10px 0;
-            }
+            .big-heart { font-size: 3em; }
+            .gift-box { width: 100px; height: 100px; }
         }
     </style>
 </head>
@@ -634,6 +551,8 @@
     </div>
     
     <div class="floating-hearts" id="heartsContainer"></div>
+    
+    <div class="nav-dots" id="navDots"></div>
 
     <div class="screen start-screen active" id="screen1">
         <div class="content-box">
@@ -716,7 +635,7 @@
                 <div class="photo-slot" onclick="revealPhoto(this, 1)">
                     📷
                     <div class="photo-message">
-                        31/12/2025<br>
+                        31/11/2025<br>
                         <em>TULIO Y BODOQUE</em>
                     </div>
                 </div>
@@ -800,13 +719,25 @@
                     </div>
                     <div class="envelope-back">
                         <strong>Velu:</strong><br><br>
-                        Primero perdoname por poner esta canción JAAJAJ, pero si quería hacer algo bonito quería hacerlo con todo.<br><br> Quería hacer algo diferente este San Valentín, algo que nos hiciera reír y recordar por qué nos llevamos tan bien.<br><br>
+                        Primero perdoname por poner esta canción JAAJAJ,sé lo que significa para ti.<br><br>
+                        Quería preparate esta sorpresa para demostrarte que si eres importante para mi :3<br><br>
                         
-                        Independiente de las bromas tontas y los momentos ridículos, quiero que sepas que realmente valoro cada instante que compartimos. Eres una persona increíble, llena de luz y alegría, y me siento afortunado de haber coincidido contigo.
+                        Para partir, quiero que sepas que realmente valoro cada instante que compartimos, ya sea en persona o de forma online.
+                         Eres una persona increíble, llena de luz y alegría, y me siento muy afortunado de haberte conocido y poder encontrar en ti, una persona
+                         en la que puedo confiar uwu.
+                        
                         <br><br>
                         
-                        Sea lo que sea, si estamos juntos o no, seamos amigos o no, nuestras almas coincidieron y salió vinculo muy bonito.❤️<br><br>
-                        Feliz día del amor y la amistad. Gracias por ser tú y por permitirme ser parte de tu vida.<br><br>
+                        Independientemente del contexto en el que nos encontremos, si estamos juntos o no, seamos amigos o no.... coincidimos y eso es lo más importante❤️.
+                        <br><br>
+                        Y aprovecho también de disculparme si a veces no pesco mucho o si se me olvidan algunas cosas (a veces paso muy metido en mi mundo), pero no significa
+                        que no me importes!!!, solamente soy medio rarito.  <br><br>
+                        Quiero que sepas que siempre contarás conmigo para lo que necesites, ya sea para reirte, desahogarte, o simplemente para tener a alguien con quien hablar.
+                        <br><br>Bueno en verdad ya en este punto me da un poco de pena por haber hecho todo esto y hacerte una tremenda ilusión JAJAJ, pero bueno es lo que sentía y lo
+                        que quería darte, porque es algo q mereces :3<br><br>
+                        y bueno... ya no sé que más decirte XDD asi q me despido. <br><br>Espero que te haya gustado la sorpresa :3<br><br> 
+
+                        Feliz día del amor y la amistad!!!!!. Gracias por ser tú y por permitirme ser parte de tu vida.<br><br>
                         <em>Con todo mi cariño,<br>
                         Tu Chileno favorito</em><br><br>
                         
@@ -839,22 +770,23 @@
         let currentTrack = null;
         
         let loveMessagesList = [
-            "Eres calma bonita 🌿",
-            "Qué suerte coincidir contigo ✨",
-            "Tu presencia suma mucho 💫",
-            "Contigo todo es más ligero ☁️",
-            "Tienes luz propia 🌟",
+            "Tienes buenas tetas 😊",
+            "Qué suerte coincidir contigo 💫",
+            "Tu Aura es bonita 💫",
+            "Eres linda y Graciosa😊",
+            "Excelente Gusto musical 🌟",
             "Tu presencia hace bien 😊",
             "Eres un lugar seguro 🫶",
             "Qué bonito fue cruzarnos en cusco 🌸",
             "Haces el día mejor 🌈",
             "Gracias por existir 🌟",
             "Eres muy capaz🫶",
-            "Eres una chica dulce 🌟"
+            "Eres una chica muy dulce 🌟"
         ];
 
         document.addEventListener('DOMContentLoaded', () => {
             createHearts();
+            createNavDots();
             updateProgress();
         });
 
@@ -875,9 +807,23 @@
             }, 1500);
         }
 
+        function createNavDots() {
+            const container = document.getElementById('navDots');
+            for (let i = 1; i <= totalScreens; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'dot' + (i === 1 ? ' active' : '');
+                dot.onclick = () => goToScreen(i);
+                container.appendChild(dot);
+            }
+        }
+
         function updateProgress() {
             const progress = (currentScreen / totalScreens) * 100;
             document.getElementById('progressBar').style.width = progress + '%';
+            
+            document.querySelectorAll('.dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index + 1 === currentScreen);
+            });
         }
 
         function startWithMusic() {
